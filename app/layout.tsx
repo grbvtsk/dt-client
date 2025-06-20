@@ -9,11 +9,7 @@ export const metadata: Metadata = {
   description: "Browse and explore recipes",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body className={`bg-white text-black font-sans ${inter.className}`}>

@@ -31,9 +31,7 @@ export default async function RecipeInfoPage({ params }: RecipeInfoPageProps) {
           alt={recipe.strMeal}
           className="rounded-xl w-full max-w-md shadow-md"
         />
-        <h1 className="text-4xl font-bold mt-4 text-[#5B2A86]">
-          {recipe.strMeal}
-        </h1>
+        <h1 className="text-4xl font-bold mt-4 text-[#5B2A86]">{recipe.strMeal}</h1>
 
         <Link
           href={`/?area=${recipe.strArea}`}
@@ -42,23 +40,16 @@ export default async function RecipeInfoPage({ params }: RecipeInfoPageProps) {
           {recipe.strArea}
         </Link>
 
-        <p className="mt-6 whitespace-pre-line text-base">
-          {recipe.strInstructions}
-        </p>
+        <p className="mt-6 whitespace-pre-line text-base">{recipe.strInstructions}</p>
 
-        <h2 className="mt-8 font-semibold text-2xl text-[#5B2A86]">
-          Ingredients
-        </h2>
+        <h2 className="mt-8 font-semibold text-2xl text-[#5B2A86]">Ingredients</h2>
         <ul className="list-disc list-inside mt-2 space-y-1">
           {ingredients.map((ing, i) => {
             if (!ing) return null;
             const name = ing.split(" - ")[0];
             return (
               <li key={i}>
-                <Link
-                  href={`/?ingredient=${name}`}
-                  className="text-[#5B2A86] hover:underline"
-                >
+                <Link href={`/?ingredient=${name}`} className="text-[#5B2A86] hover:underline">
                   {ing}
                 </Link>
               </li>
